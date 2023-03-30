@@ -1,0 +1,39 @@
+{
+    "routes": [
+        {
+            "route": "/img/*",
+            "headers": {
+                "cache-control": "public, max-age=86400"
+            }
+        },
+        {
+            "route": "/models/*",
+            "headers": {
+                "cache-control": "public, max-age=86400"
+            }
+        },
+        {
+            "route": "/static/*",
+            "headers": {
+                "cache-control": "public, max-age=86400"
+            }
+        },
+        {
+            "route": "/index.html",
+            "headers": {
+                "cache-control": "no-cache"
+            }
+        }
+    ],
+    "navigationFallback": {
+        "rewrite": "index.html",
+        "exclude": [
+            "*.{svg,png,jpg,gif}",
+            "*.{css,scss}",
+            "*.js"
+        ]
+    },
+    "mimeTypes": {
+        ".json": "text/json"
+    }
+}
